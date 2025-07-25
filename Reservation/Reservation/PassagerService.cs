@@ -73,7 +73,14 @@ namespace Reservation
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
-                var cmd = new MySqlCommand("SELECT * FROM passager WHERE idreserve=@id", conn);
+                MySqlCommand cmd;
+                if(res.Trim() == "")
+                {
+                    cmd = new MySqlCommand("SELECT * FROM passager", conn);
+                } else
+                {
+                    cmd = new MySqlCommand("SELECT * FROM passager WHERE idreserve=@id", conn);
+                }
                 cmd.Parameters.AddWithValue("@id", res);
                 using (var reader = cmd.ExecuteReader())
                 {

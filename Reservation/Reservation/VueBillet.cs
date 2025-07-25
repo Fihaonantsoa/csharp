@@ -55,6 +55,7 @@ namespace Reservation
             ChargerRes();
             ChargerResevation();
             ChargerBillet();
+            ChargerImp();
             ChargerPaie();
         }
         private void InitialiUI()
@@ -645,24 +646,25 @@ namespace Reservation
             controlHeight = 75;
 
             cbRes = CreateFormControlCombo("Reservation", ref y, controlHeight, Detaille6);
+            cbRes.SelectedValueChanged += (s, e) => ChargerImp();
 
             Panel dgPanel = new Panel
             {
-                Location = new Point(20, 100),
-                Size = new Size(300, 300),
+                Location = new Point(20, 200),
+                Size = new Size(460, 430),
                 BackColor = Color.Red,
             };
 
             dgPassRes = new DataGridView
             {
                 Dock = DockStyle.Fill,
-                BackgroundColor = Color.White,
                 BorderStyle = BorderStyle.None,
                 ReadOnly = true,
                 AllowUserToAddRows = false,
                 AllowUserToDeleteRows = false,
                 AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-                RowHeadersVisible = false
+                RowHeadersVisible = false,
+                BackColor = Color.Red,
             };
             StyleDataGridImp();
 
@@ -738,11 +740,12 @@ namespace Reservation
         }
         private void ChargerResevation()
         {
-            //DataTable dt = PassagerService.ObtenirTousRes(cbRes.SelectedValue.ToString());
-            //cbRes.Items.Clear();
-            //cbRes.DataSource = dt;
-            //cbRes.DisplayMember = "idreserve";
-            //cbRes.ValueMember = "idreserve";
+            DataTable dt = Reservice.ObtenirTous();
+            cbRes.DataSource = null;
+            cbRes.DataSource = dt;
+            cbRes.DisplayMember = "idreserve";
+            cbRes.ValueMember = "idreserve";
+
         }
 
         private void StyleDataGridImp()
@@ -765,7 +768,7 @@ namespace Reservation
         {
             string txt = cbRes.SelectedValue.ToString();
             dgPassRes.DataSource = PassagerService.ObtenirTousRes(txt);
-            foreach (DataGridViewColumn col in dgPass.Columns)
+            foreach (DataGridViewColumn col in dgPassRes.Columns)
             {
                 if (col.Name != "id" && col.Name != "nom")
                 {
