@@ -11,7 +11,6 @@ namespace Reservation
         private ResService service;
         private PassagerService serP;
         private DateTimePicker date;
-        private ComboBox cbPassager;
         private TextBox idtxt, recherche, prix, mode;
         private Button btnAjouter, btnModifier, btnSupprimer, btnActualiser;
         private DataGridView dgRes;
@@ -28,7 +27,6 @@ namespace Reservation
             service = new ResService();
             serP = new PassagerService();
             ChargerRes();
-            ChargerVoyageur();
             ViderChamps();
         }
 
@@ -133,7 +131,6 @@ namespace Reservation
             int controlHeight = 75;
 
             idtxt = CreateFormControl("ID", ref y, controlHeight, sideCenter);
-            cbPassager = CreateFormControlCombo("Passager", ref y, controlHeight, sideCenter);
             date = CreateFormControlDate("Date de reservation", ref y, controlHeight, sideCenter);
             prix = CreateFormControl("Prix", ref y, controlHeight, sideCenter);
             mode = CreateFormControl("Mode de Paiemant", ref y, controlHeight, sideCenter);
@@ -244,7 +241,6 @@ namespace Reservation
             if (dgRes.Columns.Count > 0)
             {
                 dgRes.Columns["idreserve"].HeaderText = "ID";
-                dgRes.Columns["idvoyageur"].HeaderText = "Passager";
                 dgRes.Columns["datereserve"].HeaderText = "Date";
                 dgRes.Columns["prix"].HeaderText = "Prix";
                 dgRes.Columns["modepaie"].HeaderText = "Mode de Paiement";
@@ -391,13 +387,11 @@ namespace Reservation
             if (dgRes.CurrentRow != null)
             {
                 string id = dgRes.CurrentRow.Cells[0].Value?.ToString();
-                string passager = dgRes.CurrentRow.Cells[1].Value?.ToString();
-                string daterese = dgRes.CurrentRow.Cells[2].Value?.ToString();
-                string Prix = dgRes.CurrentRow.Cells[3].Value?.ToString();
-                string modepaie = dgRes.CurrentRow.Cells[4].Value?.ToString();
+                string daterese = dgRes.CurrentRow.Cells[1].Value?.ToString();
+                string Prix = dgRes.CurrentRow.Cells[2].Value?.ToString();
+                string modepaie = dgRes.CurrentRow.Cells[3].Value?.ToString();
 
                 idtxt.Text = id;
-                cbPassager.SelectedValue = passager;
                 prix.Text = Prix;
                 mode.Text = modepaie;
                 if (DateTime.TryParse(daterese, out DateTime date1))
@@ -405,15 +399,6 @@ namespace Reservation
                     date.Value = date1;
                 }
             }
-        }
-
-        private void ChargerVoyageur()
-        {
-            DataTable dt = serP.ObtenirTous();
-            cbPassager.Items.Clear();
-            cbPassager.DataSource = dt;
-            cbPassager.DisplayMember = "id";
-            cbPassager.ValueMember = "id";
         }
         private Boolean VerifierChamps()
         {
@@ -447,7 +432,7 @@ namespace Reservation
                     DateTime datereserve = date.Value;
                     int Prix = int.Parse(prix.Text.Trim());
 
-                    var Res = new Reservation(idtxt.Text, cbPassager.SelectedValue.ToString(), datereserve, Prix, mode.Text);
+                    var Res = new Reservation(idtxt.Text, datereserve, Prix, mode.Text);
 
                     service.Ajouter(Res);
                     ChargerRes();
@@ -471,7 +456,7 @@ namespace Reservation
                     DateTime datereserve = date.Value;
                     int Prix = int.Parse(prix.Text.Trim());
 
-                    var Res = new Reservation(idtxt.Text, cbPassager.SelectedValue.ToString(), datereserve, Prix, mode.Text);
+                    var Res = new Reservation(idtxt.Text, datereserve, Prix, mode.Text);
 
                     service.Modifier(Res);
                     ChargerRes();
@@ -525,14 +510,13 @@ namespace Reservation
 
             DataTable dt = service.ObtenirTous();
             DataView dv = dt.DefaultView;
-            dv.RowFilter = $"idreserve LIKE '%{texte}%' OR idvoyageur LIKE '%{texte}%' OR modepaie LIKE '%{texte}%'";
+            dv.RowFilter = $"idreserve LIKE '%{texte}%' OR  modepaie LIKE '%{texte}%'";
             dgRes.DataSource = dv;
         }
 
         private void ViderChamps()
         {
             idtxt.Text = "";
-            cbPassager.SelectedIndex = -1;
             date.Value = DateTime.Now;
             prix.Text = "";
             mode.Text = "";

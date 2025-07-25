@@ -8,10 +8,12 @@ namespace Reservation
 {
     public class PassagerForm : Form
     {
+        private ResService ResServe;
         private PassagerService service;
         private TextBox idtxt, nom, recherche, passeport, nationalite, tel;
         private Button btnAjouter, btnModifier, btnSupprimer, btnActualiser;
         private DataGridView dgPass;
+        private ComboBox cbRes;
 
         private readonly Color PrimaryColor = Color.FromArgb(33, 47, 61);
         private readonly Color SecondaryColor = Color.FromArgb(52, 73, 94);
@@ -24,6 +26,8 @@ namespace Reservation
             InitializeUI();
             service = new PassagerService();
             ChargerPassager();
+            ResServe = new ResService();
+            ChargerResevation();
             ViderChamps();
         }
 
@@ -132,6 +136,7 @@ namespace Reservation
             passeport = CreateFormControl("Passeport", ref y, controlHeight, sideCenter);
             nationalite = CreateFormControl("Nationalité", ref y, controlHeight, sideCenter);
             tel = CreateFormControl("Téléphone", ref y, controlHeight, sideCenter);
+            cbRes = CreateFormControlCombo("Reservation", ref y, controlHeight, sideCenter);
 
             var buttonPanel = new Panel
             {
@@ -227,6 +232,46 @@ namespace Reservation
             this.Controls.Add(mainpanel);
         }
 
+        private ComboBox CreateFormControlCombo(string label, ref int y, int height, Panel parent)
+        {
+            var panel = new Panel
+            {
+                Location = new Point(20, y),
+                Size = new Size(310, height)
+
+            };
+
+            var lbl = new Label
+            {
+                Text = label,
+                Location = new Point(0, 0),
+                ForeColor = Color.White,
+                AutoSize = true
+            };
+
+            var txt = new ComboBox
+            {
+                Location = new Point(0, 25),
+                Width = 310,
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                FlatStyle = FlatStyle.Flat
+            };
+
+            panel.Controls.Add(lbl);
+            panel.Controls.Add(txt);
+            parent.Controls.Add(panel);
+
+            y += height;
+            return txt;
+        }
+        private void ChargerResevation()
+        {
+            DataTable dt = ResServe.ObtenirTous();
+            cbRes.Items.Clear();
+            cbRes.DataSource = dt;
+            cbRes.DisplayMember = "idreserve";
+            cbRes.ValueMember = "idreserve";
+        }
         private void StyleDataGrid()
         {
             dgPass.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
@@ -243,6 +288,7 @@ namespace Reservation
                 dgPass.Columns["passeport"].HeaderText = "Passeport";
                 dgPass.Columns["nationalite"].HeaderText = "Nationalité";
                 dgPass.Columns["telephone"].HeaderText = "Téléphone";
+                dgPass.Columns["idreserve"].HeaderText = "Reservation";
             }
         }
         private Button espace()
@@ -357,12 +403,14 @@ namespace Reservation
                 string Passeport = dgPass.CurrentRow.Cells[2].Value?.ToString();
                 string Nationalite = dgPass.CurrentRow.Cells[3].Value?.ToString();
                 string Tel = dgPass.CurrentRow.Cells[4].Value?.ToString();
+                string Res = dgPass.CurrentRow.Cells[5].Value?.ToString();
 
                 idtxt.Text = id;
                 nom.Text = Nom;
                 passeport.Text = Passeport;
                 nationalite.Text = Nationalite;
                 tel.Text = Tel;
+                cbRes.SelectedValue = Res;
             }
         }
 
@@ -396,7 +444,7 @@ namespace Reservation
             {
                 try
                 {
-                    var pass = new Passager(idtxt.Text, nom.Text, passeport.Text, nationalite.Text, tel.Text);
+                    var pass = new Passager(idtxt.Text, nom.Text, passeport.Text, nationalite.Text, tel.Text, cbRes.SelectedValue.ToString());
 
                     service.Ajouter(pass);
                     ChargerPassager();
@@ -418,7 +466,7 @@ namespace Reservation
             {
                 try
                 {
-                    var pass = new Passager(idtxt.Text, nom.Text, passeport.Text, nationalite.Text, tel.Text);
+                    var pass = new Passager(idtxt.Text, nom.Text, passeport.Text, nationalite.Text, tel.Text, cbRes.SelectedValue.ToString());
 
                     service.Modifier(pass);
                     ChargerPassager();
@@ -484,6 +532,7 @@ namespace Reservation
             nationalite.Text = "";
             tel.Text = "";
             idtxt.Enabled = true;
+            cbRes.SelectedIndex = -1;
         }
     }
 }

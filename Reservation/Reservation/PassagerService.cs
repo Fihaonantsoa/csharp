@@ -15,12 +15,13 @@ namespace Reservation
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
-                var cmd = new MySqlCommand("INSERT INTO passager (id, nom, passeport, nationalite, telephone) VALUES (@id, @nom, @passeport, @nationalite, @telephone)", conn);
+                var cmd = new MySqlCommand("INSERT INTO passager (id, nom, passeport, nationalite, telephone, idreserve) VALUES (@id, @nom, @passeport, @nationalite, @telephone, @idres)", conn);
                 cmd.Parameters.AddWithValue("@id", p.Id);
                 cmd.Parameters.AddWithValue("@nom", p.Nom);
                 cmd.Parameters.AddWithValue("@passeport", p.Passeport);
                 cmd.Parameters.AddWithValue("@nationalite", p.Nationalite);
                 cmd.Parameters.AddWithValue("@telephone", p.Telephone);
+                cmd.Parameters.AddWithValue("@idres", p.IdRes);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -30,12 +31,13 @@ namespace Reservation
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
-                var cmd = new MySqlCommand("UPDATE passager SET nom=@nom, passeport=@passeport, nationalite=@nationalite, telephone=@telephone WHERE id=@id", conn);
+                var cmd = new MySqlCommand("UPDATE passager SET nom=@nom, passeport=@passeport, nationalite=@nationalite, telephone=@telephone, idreserve=@idres WHERE id=@id", conn);
                 cmd.Parameters.AddWithValue("@id", p.Id);
                 cmd.Parameters.AddWithValue("@nom", p.Nom);
                 cmd.Parameters.AddWithValue("@passeport", p.Passeport);
                 cmd.Parameters.AddWithValue("@nationalite", p.Nationalite);
                 cmd.Parameters.AddWithValue("@telephone", p.Telephone);
+                cmd.Parameters.AddWithValue("@idres", p.IdRes);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -65,6 +67,22 @@ namespace Reservation
             }
             return dt;
         }
+        public DataTable ObtenirTousRes(string res)
+        {
+            DataTable dt = new DataTable();
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                var cmd = new MySqlCommand("SELECT * FROM passager WHERE idreserve=@id", conn);
+                cmd.Parameters.AddWithValue("@id", res);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+            }
+            return dt;
+        }
+
     }
 
 

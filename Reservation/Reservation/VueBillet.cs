@@ -21,13 +21,13 @@ namespace Reservation
         private PaieService servicePaie;
         private Button btn1, btn2, btn3, btn4, btn5;
         public HeaderContainer HeaderPanel;
-        private TextBox RechercheInput, idtxt, nom, passeport, nationalite, tel;
-        private TextBox RechercheInputRes, idRes, idVoyageur, dateRes, prixRes, modePaie;
+        private TextBox RechercheInput, idtxt, nom, passeport, nationalite, tel, reserve;
+        private TextBox RechercheInputRes, idRes, dateRes, prixRes, modePaie;
         private TextBox idBillet, Passager, Vol, Reserver, classe, siege, prixBillet, etat;
         private TextBox RechercheInputPaie, idPaie, idResPaie, datePaie, montantPaie;
         private TextBox Passager2, champs1, champs2, champs3;
-        private DataGridView dgPass, dgRes, dgPaie;
-        private ComboBox RechercheBillet;
+        private DataGridView dgPass, dgRes, dgPaie, dgPassRes;
+        private ComboBox RechercheBillet, cbRes;
 
         private readonly Color PrimaryColor = Color.FromArgb(33, 47, 61);
         private readonly Color SecondaryColor = Color.FromArgb(52, 73, 94);
@@ -53,6 +53,7 @@ namespace Reservation
             MainPanel();
             ChargerPassager();
             ChargerRes();
+            ChargerResevation();
             ChargerBillet();
             ChargerPaie();
         }
@@ -110,7 +111,7 @@ namespace Reservation
             Premier = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.WhiteSmoke,
+                BackColor = Color.DodgerBlue,
 
             };
 
@@ -145,7 +146,7 @@ namespace Reservation
             Nom2.Controls.Add(monLab2);
             Detaille.Controls.Add(Nom2);
 
-            int y = 150;
+            int y = 110;
             int controlHeight = 75;
 
             idtxt = CreateFormControl("ID", ref y, controlHeight, Detaille);
@@ -153,6 +154,7 @@ namespace Reservation
             passeport = CreateFormControl("Passeport", ref y, controlHeight, Detaille);
             nationalite = CreateFormControl("Nationalité", ref y, controlHeight, Detaille);
             tel = CreateFormControl("Téléphone", ref y, controlHeight, Detaille);
+            reserve = CreateFormControl("Reservation", ref y, controlHeight, Detaille);
 
 
             CreatePanel(Premier, Detaille, new Point(20, 100), new Size(500, 565));
@@ -226,7 +228,7 @@ namespace Reservation
             Second = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.WhiteSmoke,
+                BackColor = Color.DodgerBlue,
 
             };
 
@@ -266,7 +268,6 @@ namespace Reservation
             controlHeight = 75;
 
             idRes = CreateFormControl("ID", ref y, controlHeight, Detaille2);
-            idVoyageur = CreateFormControl("Voyageur", ref y, controlHeight, Detaille2);
             dateRes = CreateFormControl("Date", ref y, controlHeight, Detaille2);
             prixRes = CreateFormControl("Prix", ref y, controlHeight, Detaille2);
             modePaie = CreateFormControl("Paiement", ref y, controlHeight, Detaille2);
@@ -494,14 +495,9 @@ namespace Reservation
             Fourth = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.WhiteSmoke,
+                BackColor = Color.DodgerBlue,
 
             };
-
-
-
-
-
 
             Panel Detaille5 = new Panel
             {
@@ -551,6 +547,7 @@ namespace Reservation
                 Size = new Size(600, 650),
                 BackColor = Color.White,
             };
+
 
             dgPaie = new DataGridView
             {
@@ -609,24 +606,82 @@ namespace Reservation
             BarRecherche5.Controls.Add(LabRecherche5);
             Fourth.Controls.Add(BarRecherche5);
 
-
-
-
-
-
-
-
-            // The Fourth Panel 
+            // The Fifth Panel 
             Fifth = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.Gray,
+                BackColor = Color.DodgerBlue,
 
             };
 
+            Panel Detaille6 = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = Color.White,
+            };
+
+            Panel Nom6 = new Panel
+            {
+                Location = new Point(20, 20),
+                Size = new Size(450, 60),
+                BackColor = Color.White,
+                Region = new Region(GetRoundedPath(new Rectangle(0, 0, 450, 60), 10))
+            };
+
+            Label monLab6 = new Label
+            {
+                Dock = DockStyle.Fill,
+                ForeColor = Color.White,
+                Text = "Detaille de Paiement !",
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Monotype Corsiva", 16, FontStyle.Bold),
+                BackColor = Color.DodgerBlue
+            };
+
+            Nom6.Controls.Add(monLab6);
+            Detaille6.Controls.Add(Nom6);
+
+            y = 100;
+            controlHeight = 75;
+
+            cbRes = CreateFormControlCombo("Reservation", ref y, controlHeight, Detaille6);
+
+            Panel dgPanel = new Panel
+            {
+                Location = new Point(20, 100),
+                Size = new Size(300, 300),
+                BackColor = Color.Red,
+            };
+
+            dgPassRes = new DataGridView
+            {
+                Dock = DockStyle.Fill,
+                BackgroundColor = Color.White,
+                BorderStyle = BorderStyle.None,
+                ReadOnly = true,
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                RowHeadersVisible = false
+            };
+            StyleDataGridImp();
+
+            dgPanel.Controls.Add(dgPassRes);
+            Detaille6.Controls.Add(dgPanel);
+            CreatePanel(Fifth, Detaille6, new Point(20, 20), new Size(500, 650));
+
+            Panel CorpsContent6 = new Panel
+            {
+                Location = new Point(560, 20),
+                Size = new Size(600, 650),
+                BackColor = Color.White,
+            };
+
+
+
             Contenu.Controls.Add(Fifth);
             Contenu.Controls.Add(Fourth);
-            Contenu.Controls.Add(Third);
+            Contenu.Controls.Add(Third); 
             Contenu.Controls.Add(Premier);
             Contenu.Controls.Add(Second);
 
@@ -656,7 +711,7 @@ namespace Reservation
                 Padding = new Padding(40, 20, 40, 0),
             };
 
-            btn1 = CreateActionButton("Vol", new Size(0, 50), AccentColor, (s, e) => showFifth());
+            btn1 = CreateActionButton("Exporter un Billet", new Size(0, 50), AccentColor, (s, e) => showFifth());
             Button i1 = espace();
             btn2 = CreateActionButton("Paiement", new Size(0, 50), AccentColor, (s, e) => showFourth());
             Button i2 = espace();
@@ -680,6 +735,44 @@ namespace Reservation
 
             mainPanel.Controls.Add(Body);
             this.Controls.Add(mainPanel);
+        }
+        private void ChargerResevation()
+        {
+            //DataTable dt = PassagerService.ObtenirTousRes(cbRes.SelectedValue.ToString());
+            //cbRes.Items.Clear();
+            //cbRes.DataSource = dt;
+            //cbRes.DisplayMember = "idreserve";
+            //cbRes.ValueMember = "idreserve";
+        }
+
+        private void StyleDataGridImp()
+        {
+            dgPassRes.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 14, FontStyle.Bold);
+            dgPassRes.ColumnHeadersHeight = 60;
+            dgPassRes.Font = new Font("Calibri", 12, FontStyle.Regular);
+            dgPassRes.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+            dgPassRes.RowTemplate.Height = 50;
+        }
+        private void FormatDataGridImp()
+        {
+            if (dgPassRes.Columns.Count > 0)
+            {
+                dgPassRes.Columns["id"].HeaderText = "ID";
+                dgPassRes.Columns["nom"].HeaderText = "Nom";
+            }
+        }
+        private void ChargerImp()
+        {
+            string txt = cbRes.SelectedValue.ToString();
+            dgPassRes.DataSource = PassagerService.ObtenirTousRes(txt);
+            foreach (DataGridViewColumn col in dgPass.Columns)
+            {
+                if (col.Name != "id" && col.Name != "nom")
+                {
+                    col.Visible = false;
+                }
+            }
+            FormatDataGridImp();
         }
 
         // Pour le Frame Premier du voyageur
@@ -725,12 +818,14 @@ namespace Reservation
                 string Passeport = dgPass.CurrentRow.Cells[2].Value?.ToString();
                 string Nationalite = dgPass.CurrentRow.Cells[3].Value?.ToString();
                 string Tel = dgPass.CurrentRow.Cells[4].Value?.ToString();
+                string Res = dgPass.CurrentRow.Cells[5].Value?.ToString();
 
                 idtxt.Text = id;
                 nom.Text = Nom;
                 passeport.Text = Passeport;
                 nationalite.Text = Nationalite;
                 tel.Text = Tel;
+                reserve.Text = Res;
             }
         }
         private void Rechercher()
@@ -761,7 +856,7 @@ namespace Reservation
         {
             if (dgRes.Columns.Count > 0)
             {
-                //dgRes.Columns["idvoyageur"].HeaderText = "Passager";
+                dgRes.Columns["idreserve"].HeaderText = "Passager";
                 dgRes.Columns["datereserve"].HeaderText = "Date";
             }
         }
@@ -775,15 +870,13 @@ namespace Reservation
             if (dgRes.CurrentRow != null)
             {
                 string id = dgRes.CurrentRow.Cells[0].Value?.ToString();
-                string passager = dgRes.CurrentRow.Cells[1].Value?.ToString();
-                string daterese = dgRes.CurrentRow.Cells[2].Value?.ToString();
-                string Prix = dgRes.CurrentRow.Cells[3].Value?.ToString();
-                //string modepaie = dgRes.CurrentRow.Cells[4].Value?.ToString();
+                string daterese = dgRes.CurrentRow.Cells[1].Value?.ToString();
+                string Prix = dgRes.CurrentRow.Cells[2].Value?.ToString();
+                string modepaie = dgRes.CurrentRow.Cells[3].Value?.ToString();
 
                 idRes.Text = id;
-                idVoyageur.Text = passager;
                 prixRes.Text = Prix;
-                //modePaie.Text = modepaie;
+                modePaie.Text = modepaie;
                 if (DateTime.TryParse(daterese, out DateTime date1))
                 {
                     dateRes.Text = date1.ToString();
@@ -795,7 +888,7 @@ namespace Reservation
             dgRes.DataSource = Reservice.ObtenirTous();
             foreach (DataGridViewColumn col in dgRes.Columns)
             {
-                if (col.Name != "idvoyageur" && col.Name != "datereserve")
+                if (col.Name != "idreserve" && col.Name != "datereserve")
                 {
                     col.Visible = false;
                 }
@@ -934,6 +1027,44 @@ namespace Reservation
         }
 
         // Construction des outils
+        private ComboBox CreateFormControlCombo(string label, ref int y, int height, Panel parent)
+        {
+            var panel = new Panel
+            {
+                Location = new Point(20, y),
+                Size = new Size(500, height),
+
+            };
+
+
+            var lbl = new Label
+            {
+                Text = label,
+                Location = new Point(0, 0),
+                AutoSize = true,
+                MinimumSize = new Size(150, 40),
+                BackColor = Color.DodgerBlue,
+                Padding = new Padding(20, 0, 0, 0),
+                Font = new Font("Calibri", 12, FontStyle.Bold),
+                TextAlign = ContentAlignment.MiddleLeft,
+                Region = new Region(GetRoundedPath(new Rectangle(0, 0, 150, 40), 10)),
+                ForeColor = Color.White
+            };
+
+            var txt = new ComboBox
+            {
+                Location = new Point(180, 3),
+                Size = new Size(260, 40),
+                Font = new Font("Calibri", 14, FontStyle.Regular),
+            };
+
+            panel.Controls.Add(lbl);
+            panel.Controls.Add(txt);
+            parent.Controls.Add(panel);
+
+            y += height;
+            return txt;
+        }
         private TextBox CreateFormControl(string label, ref int y, int height, Panel parent)
         {
             var panel = new Panel

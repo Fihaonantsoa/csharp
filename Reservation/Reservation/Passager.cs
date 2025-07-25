@@ -17,14 +17,16 @@ namespace Reservation
         public string Passeport { get; set; }
         public string Nationalite { get; set; }
         public string Telephone { get; set; }
+        public string IdRes { get; set; }
 
-        public Passager(string id, string nom, string passeport, string nationalite, string telephone)
+        public Passager(string id, string nom, string passeport, string nationalite, string telephone, string idres)
         {
             Id = id;
             Nom = nom;
             Passeport = passeport;
             Nationalite = nationalite;
             Telephone = telephone;
+            IdRes = idres;
         }
     }
 }

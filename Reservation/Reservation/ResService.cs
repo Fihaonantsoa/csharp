@@ -15,9 +15,8 @@ namespace Reservation
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
-                var cmd = new MySqlCommand("INSERT INTO reservation (idreserve, idvoyageur, datereserve, prix, modepaie) VALUES (@id, @idv, @dateres, @prix, @mode)", conn);
+                var cmd = new MySqlCommand("INSERT INTO reservation (idreserve, datereserve, prix, modepaie) VALUES (@id, @dateres, @prix, @mode)", conn);
                 cmd.Parameters.AddWithValue("@id", p.Id);
-                cmd.Parameters.AddWithValue("@idv", p.Idvoyageur);
                 cmd.Parameters.AddWithValue("@dateres", p.Dateres);
                 cmd.Parameters.AddWithValue("@prix", p.Prix);
                 cmd.Parameters.AddWithValue("@mode", p.ModePaie);
@@ -30,9 +29,8 @@ namespace Reservation
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
-                var cmd = new MySqlCommand("UPDATE reservation SET idvoyageur=@idv, datereserve=@dateres, prix=@prix, modepaie=@mode WHERE idreserve=@id", conn);
+                var cmd = new MySqlCommand("UPDATE reservation SET datereserve=@dateres, prix=@prix, modepaie=@mode WHERE idreserve=@id", conn);
                 cmd.Parameters.AddWithValue("@id", p.Id);
-                cmd.Parameters.AddWithValue("@idv", p.Idvoyageur);
                 cmd.Parameters.AddWithValue("@dateres", p.Dateres);
                 cmd.Parameters.AddWithValue("@prix", p.Prix);
                 cmd.Parameters.AddWithValue("@mode", p.ModePaie);
@@ -58,6 +56,21 @@ namespace Reservation
             {
                 conn.Open();
                 var cmd = new MySqlCommand("SELECT * FROM reservation", conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+            }
+            return dt;
+        }
+        public DataTable ObtenirResPassager(String idres)
+        {
+            DataTable dt = new DataTable();
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                var cmd = new MySqlCommand("SELECT * FROM reservation r JOIN passager p ON p.idreserve=r.idreserve WHERE idreserve=@id", conn);
+                cmd.Parameters.AddWithValue("@id", idres);
                 using (var reader = cmd.ExecuteReader())
                 {
                     dt.Load(reader);

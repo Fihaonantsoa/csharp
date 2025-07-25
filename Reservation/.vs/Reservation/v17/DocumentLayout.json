@@ -1,34 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\asus\\source\\csharp\\Reservation\\",
+  "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\Reservation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|c:\\users\\asus\\source\\csharp\\reservation\\reservation\\vuebillet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|c:\\users\\asus\\source\\repos\\reservation\\reservation\\vuebillet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\vuebillet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\csharp\\Reservation\\reservation\\billetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\billetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\passagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\passagerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\csharp\\Reservation\\reservation\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|c:\\users\\asus\\source\\repos\\reservation\\reservation\\paieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\paieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\csharp\\Reservation\\reservation\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
-      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\passager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\passager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\csharp\\Reservation\\reservation\\paiement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\paiement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\passagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\passagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\csharp\\Reservation\\reservation\\accueilframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\accueilframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\paieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\paieform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\csharp\\Reservation\\reservation\\billet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\billet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\resform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\resform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|C:\\Users\\asus\\source\\repos\\Reservation\\reservation\\resservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5725D0B3-83AB-496B-84D4-4D02430B9FD8}|Reservation\\Reservation.csproj|solutionrelative:reservation\\resservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,87 +54,114 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Paiement.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\Paiement.cs",
-              "RelativeDocumentMoniker": "Reservation\\Paiement.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\Paiement.cs",
-              "RelativeToolTip": "Reservation\\Paiement.cs",
+              "DocumentIndex": 2,
+              "Title": "PaieService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PaieService.cs",
+              "RelativeDocumentMoniker": "Reservation\\PaieService.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PaieService.cs",
+              "RelativeToolTip": "Reservation\\PaieService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-19T03:02:37.664Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Resources.resx",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\Properties\\Resources.resx",
-              "RelativeDocumentMoniker": "Reservation\\Properties\\Resources.resx",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\Properties\\Resources.resx",
-              "RelativeToolTip": "Reservation\\Properties\\Resources.resx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-07-19T02:48:49.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\LoginForm.cs",
-              "RelativeDocumentMoniker": "Reservation\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\LoginForm.cs",
-              "RelativeToolTip": "Reservation\\LoginForm.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAAAH8AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T10:12:23.214Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BilletService.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\BilletService.cs",
-              "RelativeDocumentMoniker": "Reservation\\BilletService.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\BilletService.cs",
-              "RelativeToolTip": "Reservation\\BilletService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAB1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-17T06:42:55.02Z"
+              "WhenOpened": "2025-07-25T10:09:06.004Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AccueilFrame.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\AccueilFrame.cs",
-              "RelativeDocumentMoniker": "Reservation\\AccueilFrame.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\AccueilFrame.cs",
-              "RelativeToolTip": "Reservation\\AccueilFrame.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAowAsAAAAVAAAAAAAAAA==",
+              "Title": "PaieForm.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PaieForm.cs",
+              "RelativeDocumentMoniker": "Reservation\\PaieForm.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PaieForm.cs",
+              "RelativeToolTip": "Reservation\\PaieForm.cs",
+              "ViewState": "AgIAAIABAAAAAAAAAAAAAIABAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T09:49:35.182Z"
+              "WhenOpened": "2025-07-24T11:32:53.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PassagerForm.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PassagerForm.cs",
+              "RelativeDocumentMoniker": "Reservation\\PassagerForm.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PassagerForm.cs",
+              "RelativeToolTip": "Reservation\\PassagerForm.cs",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAvwAABAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T11:32:19.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PassagerService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PassagerService.cs",
+              "RelativeDocumentMoniker": "Reservation\\PassagerService.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\PassagerService.cs",
+              "RelativeToolTip": "Reservation\\PassagerService.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAuwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T11:29:29.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Passager.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\Passager.cs",
+              "RelativeDocumentMoniker": "Reservation\\Passager.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\Passager.cs",
+              "RelativeToolTip": "Reservation\\Passager.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T11:28:45.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ResForm.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\ResForm.cs",
+              "RelativeDocumentMoniker": "Reservation\\ResForm.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\ResForm.cs",
+              "RelativeToolTip": "Reservation\\ResForm.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAEgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T11:17:40.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\Reservation.cs",
+              "RelativeDocumentMoniker": "Reservation\\Reservation.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\Reservation.cs",
+              "RelativeToolTip": "Reservation\\Reservation.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T11:17:08.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ResService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\ResService.cs",
+              "RelativeDocumentMoniker": "Reservation\\ResService.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\ResService.cs",
+              "RelativeToolTip": "Reservation\\ResService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T11:05:19.782Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "VueBillet.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\VueBillet.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\VueBillet.cs",
               "RelativeDocumentMoniker": "Reservation\\VueBillet.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\VueBillet.cs*",
-              "RelativeToolTip": "Reservation\\VueBillet.cs*",
-              "ViewState": "AgIAAAQDAAAAAAAAAAAawBEDAAASAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\Reservation\\Reservation\\VueBillet.cs",
+              "RelativeToolTip": "Reservation\\VueBillet.cs",
+              "ViewState": "AgIAAOICAAAAAAAAAAAawOQCAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T09:42:53.155Z",
+              "WhenOpened": "2025-07-24T10:53:03.825Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Billet.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\Billet.cs",
-              "RelativeDocumentMoniker": "Reservation\\Billet.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\csharp\\Reservation\\Reservation\\Billet.cs",
-              "RelativeToolTip": "Reservation\\Billet.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-16T09:41:01.745Z"
             }
           ]
         }
