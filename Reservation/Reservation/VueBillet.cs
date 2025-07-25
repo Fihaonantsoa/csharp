@@ -761,7 +761,7 @@ namespace Reservation
         {
             if (dgRes.Columns.Count > 0)
             {
-                dgRes.Columns["idvoyageur"].HeaderText = "Passager";
+                //dgRes.Columns["idvoyageur"].HeaderText = "Passager";
                 dgRes.Columns["datereserve"].HeaderText = "Date";
             }
         }
@@ -778,12 +778,12 @@ namespace Reservation
                 string passager = dgRes.CurrentRow.Cells[1].Value?.ToString();
                 string daterese = dgRes.CurrentRow.Cells[2].Value?.ToString();
                 string Prix = dgRes.CurrentRow.Cells[3].Value?.ToString();
-                string modepaie = dgRes.CurrentRow.Cells[4].Value?.ToString();
+                //string modepaie = dgRes.CurrentRow.Cells[4].Value?.ToString();
 
                 idRes.Text = id;
                 idVoyageur.Text = passager;
                 prixRes.Text = Prix;
-                modePaie.Text = modepaie;
+                //modePaie.Text = modepaie;
                 if (DateTime.TryParse(daterese, out DateTime date1))
                 {
                     dateRes.Text = date1.ToString();
